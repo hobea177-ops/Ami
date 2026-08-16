@@ -13,8 +13,8 @@
     }
 
     body {
-      background: linear-gradient(135deg, #2c2523 0%, #1a1514 100%);
-      color: #e0d7d5;
+      background: radial-gradient(circle at center, #1f1a17 0%, #0d0b0a 100%);
+      color: #f3e5ab;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -25,28 +25,34 @@
     .container {
       text-align: center;
       width: 90%;
-      max-width: 380px;
-      padding: 30px 20px;
-      background: #241e1c;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-      border: 1px solid #423632;
+      max-width: 390px;
+      padding: 30px 22px;
+      background: linear-gradient(145deg, #181412, #100d0c);
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9),
+                  0 0 20px rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      position: relative;
     }
 
     .mother-img {
       width: 100%;
-      max-height: 220px;
+      max-height: 230px;
       object-fit: cover;
-      border-radius: 15px;
-      margin-bottom: 15px;
-      border: 1px solid #5a4a45;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      border: 2px solid #d4af37;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
     }
 
     .header-title {
       font-size: 1.8rem;
-      font-weight: bold;
-      color: #d4af37;
+      font-weight: 700;
+      background: linear-gradient(45deg, #ffe082, #d4af37, #aa771c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 15px;
+      letter-spacing: 0.5px;
     }
 
     .hidden {
@@ -54,15 +60,15 @@
     }
 
     .btn {
-      background: linear-gradient(45deg, #c59b27, #8e6d17);
-      color: #fff;
-      border: none;
-      padding: 14px 32px;
+      background: linear-gradient(135deg, #d4af37 0%, #aa771c 100%);
+      color: #0d0b0a;
+      border: 1px solid #ffe082;
+      padding: 15px 32px;
       font-size: 1.1rem;
       font-weight: bold;
       border-radius: 50px;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(197, 155, 39, 0.3);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
       transition: all 0.3s ease;
       margin-top: 15px;
       outline: none;
@@ -70,73 +76,122 @@
     }
 
     .btn:active {
-      transform: scale(0.96);
+      transform: scale(0.97);
     }
 
     .player-box {
       position: relative;
-      width: 220px;
-      height: 220px;
+      width: 250px;
+      height: 250px;
       margin: 20px auto;
-      background: #1a1514;
+      background: linear-gradient(145deg, #2a221e, #14100e);
       border-radius: 20px;
       padding: 15px;
-      border: 1px solid #3d312e;
-      box-shadow: inset 0 0 10px #000;
+      border: 2px solid #5a4727;
+      box-shadow: inset 0 0 15px #000, 0 10px 30px rgba(0, 0, 0, 0.8);
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
     .record {
-      width: 170px;
-      height: 170px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
-      background: repeating-radial-gradient(
-        circle,
-        #111,
-        #111 5px,
-        #222 6px,
-        #222 7px
-      );
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+      background: 
+        radial-gradient(circle at center, transparent 30%, rgba(255, 255, 255, 0.05) 31%, rgba(0,0,0,0.8) 100%),
+        repeating-radial-gradient(
+          circle at center,
+          #111 0px,
+          #111 2px,
+          #1c1c1c 3px,
+          #111 4px
+        );
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9), inset 0 0 2px rgba(255, 255, 255, 0.3);
       position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .record-label {
-      width: 60px;
-      height: 60px;
-      background: radial-gradient(circle, #c59b27 0%, #8e6d17 100%);
+    .record::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
       border-radius: 50%;
-      border: 3px solid #111;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 40%, rgba(255,255,255,0.08) 100%);
+      pointer-events: none;
+    }
+
+    .record-label {
+      width: 75px;
+      height: 75px;
+      background: radial-gradient(circle, #2a2015 0%, #110d08 100%);
+      border-radius: 50%;
+      border: 2px solid #d4af37;
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: inset 0 0 8px rgba(212, 175, 55, 0.5);
+    }
+
+    .record-label::after {
+      content: 'امي\aغاليتي';
+      white-space: pre;
+      font-size: 11px;
+      font-weight: bold;
+      color: #ffe082;
+      line-height: 1.2;
+      text-shadow: 0 1px 2px #000;
+    }
+
+    .record-center-pin {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: radial-gradient(circle, #fff, #999);
+      border-radius: 50%;
+      z-index: 5;
+      box-shadow: 0 0 4px #000;
     }
 
     .tone-arm {
       position: absolute;
-      top: 15px;
-      right: 15px;
-      width: 55px;
-      height: 65px;
-      border-right: 4px solid #c59b27;
-      border-top: 4px solid #c59b27;
-      border-radius: 0 15px 0 0;
+      top: 12px;
+      right: 18px;
+      width: 60px;
+      height: 90px;
+      border-right: 5px solid #d4af37;
+      border-top: 5px solid #d4af37;
+      border-radius: 0 20px 0 0;
       transform-origin: top right;
-      transform: rotate(-30deg);
-      transition: transform 0.8s ease-in-out;
+      transform: rotate(-32deg);
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
       pointer-events: none;
       z-index: 10;
+      filter: drop-shadow(-2px 4px 6px rgba(0,0,0,0.7));
+    }
+
+    .tone-arm::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: -4px;
+      width: 12px;
+      height: 16px;
+      background: #aa771c;
+      border-radius: 2px;
+      box-shadow: 0 0 4px rgba(0,0,0,0.8);
     }
 
     .spinning {
-      animation: spinRecord 2.5s linear infinite !important;
+      animation: spinRecord 2.2s linear infinite !important;
     }
 
     .arm-active {
-      transform: rotate(10deg) !important;
+      transform: rotate(12deg) !important;
     }
 
     @keyframes spinRecord {
@@ -145,28 +200,32 @@
     }
 
     #statusText {
-      margin-top: 10px;
+      margin-top: 12px;
       font-size: 0.85rem;
-      color: #e74c3c;
+      color: #ff6b6b;
       font-weight: bold;
     }
   </style>
 </head>
 <body>
 
+  <!-- الواجهة الأولى -->
   <div id="screen1" class="container">
-    <img class="mother-img" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop" alt="ابن يقبل يد امه">
+    <img class="mother-img" src="mother.jpg" alt="صورة امي">
     <div class="header-title">أهلاً بكِ حنين</div>
     <button class="btn" onclick="startApp()">اضغطي هنا حجيه</button>
   </div>
 
+  <!-- الواجهة الثانية -->
   <div id="screen2" class="container hidden">
     <div class="header-title">احبچ امي</div>
 
     <div class="player-box">
       <div id="arm" class="tone-arm"></div>
       <div id="vinylRecord" class="record">
-        <div class="record-label"></div>
+        <div class="record-label">
+          <div class="record-center-pin"></div>
+        </div>
       </div>
     </div>
 
@@ -174,6 +233,7 @@
     <div id="statusText"></div>
   </div>
 
+  <!-- ملف الصوت -->
   <audio id="myAudio" src="song.mp3" preload="auto" playsinline webkit-playsinline></audio>
 
   <script>
